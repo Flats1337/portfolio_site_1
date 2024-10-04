@@ -1,0 +1,11 @@
+.slides {
+    --shift: 0px;
+    --speed: 0s;
+
+    transform: translateX(var(--shift));
+    transition: transform var(--speed) ease-out;
+}
+
+.current {
+    
+}

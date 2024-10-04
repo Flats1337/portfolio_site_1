@@ -1,0 +1,68 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 70px;
+}
+
+.logo {
+    height: 36px;
+}
+
+.logo svg {
+    fill: #000000;
+}
+
+.menu {}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    gap: 40.5px;
+    flex-shrink: 0;
+}
+
+.menu-list__item {
+
+}
+
+.menu-list__link {
+    transition: 0.2s color;
+}
+
+.menu-list__link:hover {
+    color: var(--green);
+}
+
+.menu-side-button {
+    display: none;
+    width: 24px;
+
+    border: none;
+    background: transparent;
+}
+
+.menu-side {
+    display: none;
+}
+
+@media ( width <= 600px ) {
+    .header {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    .logo {
+        width: 144px;
+        height: 24px;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .menu-side-button {
+        display: flex;
+    }
+}

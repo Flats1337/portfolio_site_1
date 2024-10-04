@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('../../font/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf');
+}
+
+.font-h1 {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 77px;
+}
+
+.font-h2 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 51px;
+}
+
+.font-h3 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 38.3px;
+}
+
+.font-h4 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.font-p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    white-space: pre-line;
+}
+
+.font-link {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.font-title {
+    width: min-content;
+    padding: 0 7.5px;
+    background: var(--green);
+    border-radius: 7px;
+    text-wrap: nowrap;
+}
+
+.font-label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+/* Шрифт на телефоне */
+@media ( width < 600px ) {
+    .font-h1 {
+        font-size: 43px;
+        font-weight: 500;
+    }
+    
+    .font-h2 {
+        font-size: 36px;
+        font-weight: 500;
+    }
+    
+    .font-h3 {
+        font-size: 26px;
+        font-weight: 500;
+    }
+    
+    .font-h4 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .font-p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+    }
+}
