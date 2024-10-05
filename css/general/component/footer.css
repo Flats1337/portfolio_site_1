@@ -101,7 +101,7 @@
     border-top: 1px solid var(--white);
 }
 
-@media ( width <= 600px ) {
+@media ( width <= 800px ) {
     .footer-container-mob {
         padding-inline: 0;
     }

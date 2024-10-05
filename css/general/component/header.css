@@ -24,7 +24,7 @@
 }
 
 .menu-list__item {
-
+    text-wrap: nowrap;
 }
 
 .menu-list__link {
@@ -41,13 +41,29 @@
 
     border: none;
     background: transparent;
+    cursor: pointer;
 }
 
 .menu-side {
     display: none;
 }
 
-@media ( width <= 600px ) {
+@media ( 800px < width <= 1100px ) {
+    .menu {
+        display: flex;
+        gap: 40px;
+    }
+
+    .menu-list__item:not(:last-child) {
+        display: none;
+    }
+    .menu-side-button {
+        display: flex;
+        width: 40px;
+    }
+}
+
+@media ( width <= 800px ) {
     .header {
         margin-top: 30px;
         margin-bottom: 40px;

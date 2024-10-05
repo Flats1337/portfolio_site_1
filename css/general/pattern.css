@@ -62,7 +62,6 @@ svg, img {
     background: var(--gray);
 }
 
-
 .button--green {
     background: var(--green);
     color: var(--black);
@@ -114,16 +113,16 @@ svg, img {
     --card-border: var(--black); 
 }
 
-@media ( width < 1440px ) {
+@media ( width < 1300px ) {
     :root {
-        --container-padding: var(--desctop-padding)
+        --container-padding: var(--desctop-padding);
+        --container-size: var(--phone-size);
     }
 }
 
 @media ( width <= 600px ) {
     :root {
         --container-padding: var(--phone-padding);
-        --container-size: var(--phone-size);
     }
 
     .info-heading {
