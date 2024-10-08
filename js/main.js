@@ -1,9 +1,10 @@
 "use strict";
 
-import Slider from './slider.js';
+import Slider from "./slider.js";
+import HeaderMenu from "./headerMenu.js";
 
 function main() {
-    const id = "testimonials";
+    const idSlider = "testimonials";
     const data = [{
         slideContent: `"1We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."`,
         subtitle: "John Smith",
@@ -35,7 +36,31 @@ function main() {
     </button>`;
     const speed = 400;
 
-    new Slider(id, data, htmlSlide, htmlPagIndex, speed);
+    new Slider(idSlider, data, htmlSlide, htmlPagIndex, speed);
+
+    const idHeader = "headerMenu";
+    const headerList = [{
+        title: "About us",
+        link: ""
+    }, {
+        title: "Services",
+        link: ""
+    }, {
+        title: "Use Cases",
+        link: ""
+    }, {
+        title: "Pricing",
+        link: ""
+    }, {
+        title: "Blog",
+        link: ""
+    }, {
+        title: "Request a quote",
+        link: ""
+    }];
+    const htmlLinkHeader = `<li class="menu-list__item"><a class="menu-list__link" href="^{link}^">^{title}^</a></li>`;
+
+    new HeaderMenu(idHeader, headerList, htmlLinkHeader);
 }
 
-main()
+document.addEventListener("DOMContentLoaded", main);

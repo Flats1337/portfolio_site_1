@@ -1,30 +1,6 @@
 "use strict";
 
-function readRegularStr(regularStr) {
-    const varsFound = regularStr.matchAll(/\^{(.*?)}\^/g);
-    const varsList = [];
-
-    for (const varFound of varsFound) {
-        varsList.push(varFound.at(1));
-    }
-
-    return varsList;
-}
-
-function writeRegularStr(varSearch, varReplace, srtReplace) {
-    return srtReplace.replace(`^{${varSearch}}^`, varReplace);
-}
-
-function replaceHtmlPatternValues(valuesList, htmlPattern) {
-    const values = readRegularStr(htmlPattern);
-    let resultHtml = htmlPattern;
-
-    for (const valueSearch of values) {
-        resultHtml = writeRegularStr(valueSearch, valuesList[valueSearch], resultHtml);
-    }  
-
-    return resultHtml;
-}
+import replaceHtmlPatternValues from "./RegularMethod.js";
 
 export default class Slider {
     constructor(id, dataSlides, htmlSlide, htmlPagIndex, speed) {
@@ -32,11 +8,11 @@ export default class Slider {
         this.dataSlides = dataSlides;
         this.htmlSlide = htmlSlide;
         this.htmlPagIndex = htmlPagIndex;
-        this.speed = speed || 300;
-        this.repeat = true;
+        this.speed = speed;
         this.slidesLength = this.dataSlides.length - 1;
         this.slideCurrent = 0;
         this.isMove = false;
+        this.replaceHtmlPatternValues = replaceHtmlPatternValues;
 
         this.slider = document.getElementById(`${this.id}Slider`);
         this.slides = document.getElementById(`${this.id}Slides`);
@@ -44,9 +20,9 @@ export default class Slider {
         this.right = document.getElementById(`${this.id}Right`);
         this.pagIndex = document.getElementById(`${this.id}Index`);
         
-        this.left.addEventListener("click", (e) => this.moveLeft(e));
-        this.right.addEventListener("click", (e) => this.moveRight(e));
-        this.pagIndex.addEventListener("click", (e) => this.moveIndex(e));
+        this.left.addEventListener("click", e => this.moveLeft(e));
+        this.right.addEventListener("click", e => this.moveRight(e));
+        this.pagIndex.addEventListener("click", e => this.moveIndex(e));
 
         this.render();
     }
@@ -79,7 +55,7 @@ export default class Slider {
                 objectPag.active = "active";
             }
 
-            pag.push(replaceHtmlPatternValues(objectPag, this.htmlPagIndex));
+            pag.push(this.replaceHtmlPatternValues(objectPag, this.htmlPagIndex));
         }
 
         this.pagIndex.innerHTML = pag.join("");   
@@ -90,7 +66,7 @@ export default class Slider {
         const copySlides = [];
 
         for (const dataSlide of this.dataSlides) {
-            slides.push(replaceHtmlPatternValues(dataSlide, this.htmlSlide));
+            slides.push(this.replaceHtmlPatternValues(dataSlide, this.htmlSlide));
         }
 
         Object.assign(copySlides, slides);
