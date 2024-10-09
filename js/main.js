@@ -38,7 +38,7 @@ function main() {
 
     new Slider(idSlider, data, htmlSlide, htmlPagIndex, speed);
 
-    const idHeader = "headerMenu";
+    const idHeader = "header";
     const headerList = [{
         title: "About us",
         link: ""
@@ -58,8 +58,8 @@ function main() {
         title: "Request a quote",
         link: ""
     }];
-    const htmlLinkHeader = `<li class="menu-list__item"><a class="menu-list__link" href="^{link}^">^{title}^</a></li>`;
-
+    const htmlLinkHeader = `<li class="menu-side-list__item"><a class="menu-side-list__link" href="^{link}^">^{title}^</a></li>`;
+    
     new HeaderMenu(idHeader, headerList, htmlLinkHeader);
 }
 

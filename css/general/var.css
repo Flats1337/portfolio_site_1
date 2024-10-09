@@ -7,6 +7,7 @@
     --white: #FFFFFF;
     --dark-full: #000000;
     --dark-gray: #292A32;
+    --backdrop: rgba(0, 0, 0, 0.8);
     
     /* Размер и отступы контейнера */
     --desctop-size: 1240px;

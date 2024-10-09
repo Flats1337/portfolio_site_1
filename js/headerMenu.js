@@ -8,13 +8,15 @@ export default class HeaderMenu {
         this.headerList = headerList;
         this.htmlLinkHeader = htmlLinkHeader;
         this.replaceHtmlPatternValues = replaceHtmlPatternValues;
+        this.isShow = false;
 
-        this.elementListItem = document.getElementById(`${this.id}SideList`);
-        this.menuSideButton = document.getElementById(`${this.id}SideButton`);  
+        this.header = document.getElementById(this.id);
+        this.listItem = document.getElementById(`${this.id}SideList`);
+        this.sideButton = document.getElementById(`${this.id}SideButton`);  
 
         this.createHeader();    
         
-        this.menuSideButton.addEventListener("click", e => this.show(e)); 
+        this.sideButton.addEventListener("click", e => this.show(e)); 
     }
 
     createHeader() {
@@ -24,11 +26,26 @@ export default class HeaderMenu {
             headerListItem.push(this.replaceHtmlPatternValues(listItem, this.htmlLinkHeader));
             
         }
+        
+        let blackBlur = document.createElement("div");
+        blackBlur.className = "header__black-blur";
+        blackBlur.addEventListener("click", e=> this.hidden(e));
+        this.header.append(blackBlur);
 
-        this.elementListItem.innerHTML = headerListItem.join("");
+        this.listItem.innerHTML = headerListItem.join("");
     }
 
-    show() {
-        this.elementListItem.setAttribute("style", "display: flex");      
+    show(e) {
+        if (this.isShow) {
+            this.isShow = false;
+            this.header.classList.remove("header--active");
+        } else {
+            this.isShow = true;
+            this.header.classList.add("header--active");
+        }
+    }
+
+    hidden(e) {
+        this.show(e);
     }
 }
