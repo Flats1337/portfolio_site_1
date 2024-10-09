@@ -63,6 +63,7 @@
 .footer__info-conatact {
     display: flex;
     justify-content: space-between;
+    gap: 15px;
 }
 
 .footer__info {
@@ -74,8 +75,8 @@
 .footer__conatact {
     display: flex;
     gap: 20px;
-    align-items: center;
 
+    height: fit-content;
     padding: 58px 40px;
 
     background: var(--dark-gray);
@@ -83,7 +84,7 @@
 }
 
 .footer__conatact-email {
-    padding: 24px 35px;
+    padding: 22px 35px;
     --input-border: var(--white);
     --input-color: var(--white);
     --input-color-pl: var(--white);
@@ -101,6 +102,29 @@
     border-top: 1px solid var(--white);
 }
 
+.footer__conatact-button {
+    text-wrap: nowrap;
+}
+
+
+@media ( width <= 1000px) {
+    .footer__logo {
+        height: 23.6px;
+    }
+    
+    .footer__conatact {
+        flex-direction: column;
+        gap: 22px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .footer__links {
+        gap: clamp(0.625rem, -10rem + 20vw, 2.5rem);
+    }
+}
+
 @media ( width <= 800px ) {
     .footer-container-mob {
         padding-inline: 0;
@@ -113,10 +137,6 @@
         gap: 37px;
         padding: 50px 20px 30px 20px;
         border-radius: 0;
-    }
-
-    .footer__logo {
-        height: 23.6px;
     }
 
     .footer__social {
@@ -155,13 +175,6 @@
     }
 
     .footer__info-conatact button, .footer__info-conatact input {
-        width: 100%;
-    }
-    
-    .footer__conatact {
-        flex-direction: column;
-        gap: 22px;
-        padding: 30px;
         width: 100%;
     }
 

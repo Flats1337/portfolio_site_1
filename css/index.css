@@ -421,11 +421,11 @@
     text-decoration: underline;
 }
 
-@media ( width <= 600px ) {
+@media ( width <= 1000px ) {
     .studies {
         margin-bottom: 60px;
     }
-
+    
     .studies-slider {
         position: relative;
         top: 0;
@@ -706,7 +706,6 @@
 .testimonials__slides {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 50px;
     width: 100%;
 }

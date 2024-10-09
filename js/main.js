@@ -6,17 +6,17 @@ import HeaderMenu from "./headerMenu.js";
 function main() {
     const idSlider = "testimonials";
     const data = [{
-        slideContent: `"1We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."`,
+        slideContent: `"We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."`,
         subtitle: "John Smith",
         paragraph: "Marketing Director at XYZ Corp"
     }, {
-        slideContent: `"2We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."`,
-        subtitle: "John Smith",
-        paragraph: "Marketing Director at XYZ Corp"
+        slideContent: `"We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."`,
+        subtitle: "Jane Doe",
+        paragraph: "Director of Operations at XYZ Corp"
     }, {
-        slideContent: `"3We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."`,
-        subtitle: "John Smith",
-        paragraph: "Marketing Director at XYZ Corp"
+        slideContent: `"We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."`,
+        subtitle: "Michael Brown",
+        paragraph: "Senior SEO Specialist at XYZ Corp"
     }];
     const htmlSlide = `
     <div class="testimonials__slide">

@@ -22,6 +22,6 @@ export default function replaceHtmlPatternValues(valuesList={}, htmlPattern="") 
     for (const valueSearch of values) {
         resultHtml = writeRegularStr(valueSearch, valuesList[valueSearch], resultHtml);
     }  
-
+    
     return resultHtml;
 }
